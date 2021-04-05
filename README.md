@@ -1,0 +1,2 @@
+# image_classification
+CIFAR-10を利用した画像分類APIとDjangoを連携してのDB保存＋React
