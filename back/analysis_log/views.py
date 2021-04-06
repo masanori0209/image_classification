@@ -5,6 +5,7 @@ import uuid
 from django.conf import settings
 from rest_framework import status, permissions, viewsets
 from rest_framework.response import Response
+from rest_framework.renderers import JSONRenderer
 from rest_framework.views import APIView
 from .models import AIAnalysisLog
 from .serializers import AIAnalysisLogSerializer
@@ -30,24 +31,27 @@ class CreateLogAndImageAPI(APIView):
         instance.save()
         response = requests.post(
             settings.ENDPOINT_URL + image['read_type'],
-            params={'path': path},
+            data={'path': path},
             headers={'Content-Type': 'application/json'}
         )
         dict_data = response.json()
         response_data = {
-            'image_path'        : path,
-            'success'           : dict_data['success'],
+            'success'           : str(dict_data['success']),
             'message'           : dict_data['message'],
             '_class'            : dict_data['estimated_data']['class']      if 'class'      in dict_data['estimated_data'] else None,
             'confidence'        : dict_data['estimated_data']['confidence'] if 'confidence' in dict_data['estimated_data'] else None,
             'request_timestamp' : request_timestamp,
             'response_timestamp': int(datetime.datetime.today().timestamp())
         }
-        serializer = AIAnalysisLogSerializer(data=response_data)
+        serializer = AIAnalysisLogSerializer(instance, data=response_data)
         if serializer.is_valid():
             instance = serializer.save()
             return Response(
-                data=response_data,
+                data=JSONRenderer().render(
+                    AIAnalysisLogSerializer(
+                        instance
+                    ).data
+                ),
                 status=status.HTTP_200_OK
             )
         else:

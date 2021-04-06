@@ -21,7 +21,7 @@ export default {
       return logapi.createAIanalysisLog(data)
         .then((d) => {
           console.log('createAIanalysisLog', d)
-          commit('CREATE_LOG', d.data)
+          commit('CREATE_LOG', JSON.parse(d.data))
         })
         .catch((e) => {
           console.error(e)

@@ -22,22 +22,22 @@ def image_classification():
     image_type = imghdr.what(tempfilepath)
     tempdir.cleanup()
     if image_type is not None:
-        r = HTTPResponse(status=200, body={
-            'success': True,
-            'message': 'success',
-            'estimated_data': {
-                'class': 3,
-                'confidence': 0.8683
+        r = HTTPResponse(status=200, body=json.dumps({
+            "success": True,
+            "message": "success",
+            "estimated_data": {
+                "class": 3,
+                "confidence": 0.8683
             }
-        })
+        }))
         r.set_header("Content-Type", "application/json")
         return r
     else:
-        r = HTTPResponse(status=200, body={
-            'success': False,
-            'message': 'Error:E50012',
-            'estimated_data': {}
-        })
+        r = HTTPResponse(status=200, body=json.dumps({
+            "success": False,
+            "message": "Error:E50012",
+            "estimated_data": {}
+        }))
         r.set_header("Content-Type", "application/json")
         return r
 
