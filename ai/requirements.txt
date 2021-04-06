@@ -1,0 +1,6 @@
+bottle==0.12.19
+Keras==2.2.4
+scipy==1.4.1
+tensorflow==2.1.0
+tensorflow-estimator==2.1.0
+h5py==2.10.0
