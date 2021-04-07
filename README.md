@@ -3,7 +3,15 @@ Djangoを連携してのDB保存
 
 ## 立ち上げ方
 
+```
+mkdir back/analysis_log/migrations
+
+touch back/analysis_log/migrations/__init__.py
+
+docker-compose run front npm install
+
 docker-compose up -d
+```
 
 ## URL
 
