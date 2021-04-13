@@ -1,15 +1,10 @@
 # image_classification
-Djangoを連携してのDB保存
+CIFAR-10を利用したAIモデルのAPIとSPA＋APIサーバーの構築
 
 ## 立ち上げ方
 
 ```
-mkdir back/analysis_log/migrations
-
-touch back/analysis_log/migrations/__init__.py
-
 docker-compose run front npm install
-
 docker-compose up -d
 ```
 
@@ -25,9 +20,12 @@ http://localhost:8080
 
 モックアップ：決められた形式リクエストを返すような形
 
-(WIP) AI：AIモデルを使って分類し、リクエストを返すような形
+AI：AIモデルを使って分類し、リクエストを返すような形(CIFAR-10)
 
-エラーとなる場合：拡張子が画像でないもの、画像データでないもの
+エラーとなる場合：
+
+1. 拡張子が画像でないもの
+2. 画像データでないもの
 
 ## 画像データ
 
@@ -41,7 +39,3 @@ test_dataに格納
 | APIサーバー(Django)    | back | 8000 |
 | モックAPIサーバー(bottle)    | ai | 9000 |
 | DBサーバー(MySQL)    | db | 3336 |
-
-## node_modules周りで問題が発生した場合
-
-docker-compose run front npm install

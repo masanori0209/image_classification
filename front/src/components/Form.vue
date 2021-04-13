@@ -28,19 +28,6 @@
         </span>
       </div>
     </b-field>
-    <!-- 画像認識APIの種類を選ぶUI -->
-    <!-- <div class="block">
-      <b-radio v-model="parameter.readType"
-        name="read-type"
-        native-value="v1">
-        モックアップ
-      </b-radio>
-      <b-radio v-model="parameter.readType"
-        name="read-type"
-        native-value="v2">
-        AI
-      </b-radio>
-    </div> -->
     <!-- 送信ボタン -->
     <div class="block">
       <b-button

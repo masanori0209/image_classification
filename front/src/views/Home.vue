@@ -38,7 +38,7 @@ export default {
     return {
       parameter: {
         imageFile: null, // 画像データ
-        readType: 'v1', // AI側の呼び出しタイプ（'v1': モックアップ, 'v2': AI）
+        readType: 'v1', // AI側の呼び出しタイプ（'v1': AI）
       }
     }
   },

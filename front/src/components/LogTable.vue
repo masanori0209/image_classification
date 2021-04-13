@@ -6,6 +6,9 @@
       :loading="isLoading"
       striped
       bordered>
+      <template #empty>
+        <div class="has-text-centered">データがありません。</div>
+      </template>
     </b-table>
   </section>
 </template>

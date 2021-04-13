@@ -33,6 +33,8 @@ services:
       context: ./ai
       dockerfile: Dockerfile
     command: 'sh /server/start-ai.sh'
+    environment:
+      - TF_CPP_MIN_LOG_LEVEL='2'
     ports:
       - 9000:9000
     volumes:
