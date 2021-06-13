@@ -52,7 +52,6 @@ export default {
         {
             field: 'image_path',
             label: '画像のパス',
-            width: '200',
         },
         {
             field: 'success',
@@ -62,6 +61,7 @@ export default {
         {
             field: 'message',
             label: 'メッセージ',
+            width: '120',
         },
         {
             field: '_class',
