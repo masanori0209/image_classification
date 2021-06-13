@@ -71,7 +71,7 @@ def image_classification():
                 200,
                 json.dumps({
                     "success": False,
-                    "message": "Error:E50012",
+                    "message": "Error",
                     "estimated_data": {}
                 })
             )
