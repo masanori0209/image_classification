@@ -6,7 +6,7 @@
       :loading="isLoading"
       striped
       bordered>
-      <template #empty>
+      <template #empty v-if="aiAnalysisLog.length === 0">
         <div class="has-text-centered">データがありません。</div>
       </template>
     </b-table>
@@ -52,6 +52,7 @@ export default {
         {
             field: 'image_path',
             label: '画像のパス',
+            width: '200',
         },
         {
             field: 'success',
@@ -85,3 +86,5 @@ export default {
   },
 }
 </script>
+<style scoped>
+</style>
