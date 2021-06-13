@@ -1,5 +1,6 @@
 <template>
   <section class="section scroll-view">
+    <h2 class="title">Log Table</h2>
     <b-table
       :data="aiAnalysisLog"
       :columns="columns"
@@ -90,5 +91,6 @@ export default {
 .scroll-view {
   overflow: scroll;
   margin: 16px;
+  padding: 0;
 }
 </style>
