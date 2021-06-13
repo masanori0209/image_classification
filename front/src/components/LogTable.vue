@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section scroll-view">
     <b-table
       :data="aiAnalysisLog"
       :columns="columns"
@@ -87,4 +87,8 @@ export default {
 }
 </script>
 <style scoped>
+.scroll-view {
+  overflow: scroll;
+  margin: 16px;
+}
 </style>

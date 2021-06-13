@@ -19,8 +19,7 @@
 th, td {
   white-space: nowrap;
   text-overflow: ellipsis;
-  width: auto;
-  max-width: 320px;
+  max-width: 360px;
   overflow: hidden;
 }
 </style>
